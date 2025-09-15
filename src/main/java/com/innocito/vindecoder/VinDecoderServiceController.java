@@ -15,7 +15,7 @@ public class VinDecoderServiceController {
   private VinDecoderService vinDecoderService;
 
   @GetMapping(path = "/vin/decode/{vin}", produces = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<VinDecoderDTO> showStation(@PathVariable String vin) {
+  public ResponseEntity<VinDecoderDTO> getVehicleDetailsByVin(@PathVariable String vin) {
 
     return new ResponseEntity<>(vinDecoderService.getVehicleDetailsByVin(vin), HttpStatus.OK);
   }
