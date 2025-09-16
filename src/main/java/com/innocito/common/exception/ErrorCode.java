@@ -13,7 +13,8 @@ public enum ErrorCode {
   TIMEOUT_EXCEPTION("timeout_exception"),
   SERVER_UNAVAILABLE("server_unavailable"),
   VINSERVICE_EXCEPTION("vinservice_exception"),
-  INVALID_INPUT("invalid_input");
+  INVALID_INPUT("invalid_input"),
+  GRAPHQL_EXCEPTION("graphql_exception");
 
   @JsonValue
   @Getter

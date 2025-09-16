@@ -32,3 +32,8 @@ vin-service:
     license: Apache 2.0 License
     terms: Terms of Service
     version: 1.0.0
+
+rivian:
+  url: https://rivian.com/api/gql/gateway/graphql
+  email: test@gmail.com
+  password: test1234

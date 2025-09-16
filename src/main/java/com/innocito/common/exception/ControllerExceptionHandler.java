@@ -106,7 +106,8 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
   }
 
   @ExceptionHandler(ConstraintViolationException.class)
-  public ResponseEntity<ErrorResponseDTO> handle(ConstraintViolationException exception, WebRequest request) {
+  public ResponseEntity<ErrorResponseDTO> handleConstraintViolation(ConstraintViolationException exception,
+                                                                    WebRequest request) {
     Set<ConstraintViolation<?>> violations = exception.getConstraintViolations();
     String errorMessage = StringUtils.EMPTY;
     if (!violations.isEmpty()) {
@@ -184,5 +185,11 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
   public ResponseEntity<ErrorResponseDTO> handleVinServiceException(VinServiceException exception) {
     log.error(ErrorCode.VINSERVICE_EXCEPTION.name() + CUSTOM_MSG + exception.getMessage());
     return apiUtil.buildError(HttpStatus.INTERNAL_SERVER_ERROR, ErrorCode.VINSERVICE_EXCEPTION, exception.getMessage());
+  }
+
+  @ExceptionHandler(GraphQlException.class)
+  public ResponseEntity<ErrorResponseDTO> handleGraphQlException(GraphQlException exception) {
+    log.error(ErrorCode.GRAPHQL_EXCEPTION.name() + CUSTOM_MSG + exception.getMessage(), exception);
+    return apiUtil.buildError(HttpStatus.BAD_REQUEST, ErrorCode.GRAPHQL_EXCEPTION, exception.getMessage());
   }
 }
