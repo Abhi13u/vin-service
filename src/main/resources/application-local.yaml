@@ -32,8 +32,27 @@ vin-service:
     license: Apache 2.0 License
     terms: Terms of Service
     version: 1.0.0
+  memoryCache:
+    name: vin_service_memory_cache
+    permitNullValues: false
 
 rivian:
   url: https://rivian.com/api/gql/gateway/graphql
   email: test@gmail.com
   password: test1234
+
+brand:
+  rivian:
+    url: https://rivian.com/api/gql/gateway/graphql
+    email: test@gmail.com
+    password: test1234
+    secretKey: testSecret
+    vasPhoneId: test1234
+    deviceId: test1234
+  tesla:
+    url: https://fleet-auth.prd.vn.cloud.tesla.com
+    clientId: test1234
+    clientSecret: test1234
+    grantType: client_credentials
+    scope: openid user_data vehicle_device_data vehicle_location vehicle_cmds vehicle_charging_cmds
+    audience: test1234

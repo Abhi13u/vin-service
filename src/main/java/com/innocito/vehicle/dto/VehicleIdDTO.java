@@ -1,4 +1,4 @@
-package com.innocito.vindecoder.dto;
+package com.innocito.vehicle.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -11,23 +11,12 @@ import lombok.Setter;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
 @Getter
+@Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class VinDecoderDTO {
-  private String vehicleID;
+public class VehicleIdDTO {
   private String vin;
+  private String vehicleId;
   private String make;
-  private String model;
-  private String trim;
-  private Integer modelYear;
-  private String vehicleType;
-  private String driveType;
-  private String gvwr;
-  private String wheelSizeFront;
-  private String wheelSizeRear;
-  private String seats;
-  private String color;
-  private String evRange;
 }

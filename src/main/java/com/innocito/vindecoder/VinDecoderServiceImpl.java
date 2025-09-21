@@ -41,14 +41,15 @@ public class VinDecoderServiceImpl implements VinDecoderService {
 
     HttpEntity<Object> requestEntity = new HttpEntity<>(StringUtils.EMPTY, httpHeaders);
     try {
-      String url = UriComponentsBuilder.fromHttpUrl("https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/{vin}")
+      String url = UriComponentsBuilder.fromUriString("https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/{vin}")
         .queryParam("format", "json")
         .buildAndExpand(vin)
         .toUriString();
       ResponseEntity<String> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity,
         new ParameterizedTypeReference<>() {
         }, vin);
-      VinDecoderDTO vinDecoderDTO = VinDecoderDTO.builder().build();
+      VinDecoderDTO vinDecoderDTO = VinDecoderDTO.builder()
+        .build();
       if (responseEntity.getStatusCode().is2xxSuccessful()) {
         ObjectMapper mapper = new ObjectMapper();
         mapper.setPropertyNamingStrategy(PropertyNamingStrategies.UPPER_CAMEL_CASE);

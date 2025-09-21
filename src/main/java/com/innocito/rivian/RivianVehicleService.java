@@ -1,7 +1,7 @@
 package com.innocito.rivian;
 
-import com.innocito.rivian.dto.VehicleStateDTO;
+import com.innocito.rivian.dto.RivianVehicleStateDTO;
 
 public interface RivianVehicleService {
-  VehicleStateDTO getVehicleInfoByVin(String vin);
+  RivianVehicleStateDTO getVehicleInfoByVin(String vin);
 }

@@ -1,4 +1,4 @@
-package com.innocito.rivian.dto;
+package com.innocito.tesla.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -15,7 +15,7 @@ import lombok.Setter;
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CreateCSRFTokenDTO {
-  private String csrfToken;
-  private String appSessionToken;
+public class TeslaSendVehicleCommadDTO {
+  private boolean result;
+  private String reason;
 }

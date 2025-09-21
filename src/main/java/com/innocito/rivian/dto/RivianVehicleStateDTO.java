@@ -15,7 +15,7 @@ import lombok.Setter;
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class VehicleStateDTO {
+public class RivianVehicleStateDTO {
   private GNSSLocation gnssLocation;
   private VehicleStateParam<Boolean> alarmSoundStatus;
   private VehicleStateParam<Integer> timeToEndOfCharge;
@@ -147,8 +147,8 @@ public class VehicleStateDTO {
   @JsonIgnoreProperties(ignoreUnknown = true)
   @JsonInclude(JsonInclude.Include.NON_NULL)
   public static class GNSSLocation {
-    private String latitude;
-    private String longitude;
+    private Double latitude;
+    private Double longitude;
     private String timeStamp;
     private boolean isAuthorized;
   }

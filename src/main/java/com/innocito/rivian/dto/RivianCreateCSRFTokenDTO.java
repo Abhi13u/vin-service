@@ -15,8 +15,7 @@ import lombok.Setter;
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class LoginDTO {
-  private String accessToken;
-  private String refreshToken;
-  private String userSessionToken;
+public class RivianCreateCSRFTokenDTO {
+  private String csrfToken;
+  private String appSessionToken;
 }

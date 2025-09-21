@@ -12,6 +12,7 @@ public final class ErrorMessages {
   public static final String CUSTOM_MSG = "\t Custom Exception Message:";
   public static final String MISSING_REQ_PARM = " is required. It cannot be blank";
   public static final String UNEXPECTED_ERROR = "Unexpected error: %s";
+  public static final String NOT_SUPPORTED = "%s not supported";
 
   private ErrorMessages() {
     throw new UnsupportedOperationException(OPERATION_NOT_SUPPORTED);

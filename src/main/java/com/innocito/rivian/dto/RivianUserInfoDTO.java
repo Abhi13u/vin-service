@@ -17,7 +17,7 @@ import java.util.List;
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class UserInfoDTO {
+public class RivianUserInfoDTO {
   private String id;
   private String firstName;
   private String lastName;

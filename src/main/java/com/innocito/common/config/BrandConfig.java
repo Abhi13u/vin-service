@@ -12,32 +12,34 @@ import org.springframework.context.annotation.Configuration;
 @AllArgsConstructor
 @Builder
 @Configuration
-@ConfigurationProperties("vin-service")
-public class VinServiceConfig {
-  private Contact contact;
-  private MemoryCache memoryCache;
+@ConfigurationProperties("brand")
+public class BrandConfig {
+  private RivianConfig rivian;
+  private TeslaConfig tesla;
 
   @Data
   @RequiredArgsConstructor
   @AllArgsConstructor
   @Builder
-  public static class Contact {
-    private String title;
+  public static class RivianConfig {
     private String url;
     private String email;
-    private String description;
-    private String team;
-    private String license;
-    private String terms;
-    private String version;
+    private String password;
+    private String secretKey;
+    private String vasPhoneId;
+    private String deviceId;
   }
 
   @Data
   @RequiredArgsConstructor
   @AllArgsConstructor
   @Builder
-  public static class MemoryCache {
-    private String name;
-    private boolean permitNullValues;
+  public static class TeslaConfig {
+    private String url;
+    private String clientId;
+    private String clientSecret;
+    private String grantType;
+    private String audience;
+    private String scope;
   }
 }
