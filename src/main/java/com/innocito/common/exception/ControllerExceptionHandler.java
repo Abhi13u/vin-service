@@ -1,6 +1,5 @@
 package com.innocito.common.exception;
 
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import com.innocito.common.util.ApiUtil;
 import jakarta.validation.ConstraintViolation;
@@ -67,7 +66,8 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
       message = String.format(ErrorMessages.INVALID_VALUE_NOT_EXPECTED_TYPE,
         invalidFormatException.getValue(),
         invalidFormatException.getPath().stream()
-          .map(JsonMappingException.Reference::getFieldName)
+          .map(reference -> reference.getFieldName() != null
+            ? reference.getFieldName() : String.format("[%d]", reference.getIndex()))
           .collect(Collectors.joining(DOT_DELIMITER)),
         invalidFormatException.getTargetType().getSimpleName());
     }

@@ -7,7 +7,7 @@ public final class ErrorMessages {
   public static final String NOT_FOUND = "%s not found";
   public static final String MALFORMED_JSON_REQUEST = "Malformed JSON request";
   public static final String JSON_PARSE_ERROR = "Error parsing JSON:";
-  public static final String INVALID_VALUE_NOT_EXPECTED_TYPE = "Invalid value '%s' for field '%s'; excepted type is " +
+  public static final String INVALID_VALUE_NOT_EXPECTED_TYPE = "Invalid value '%s' for field '%s'; expected type is " +
     "'%s'.";
   public static final String CUSTOM_MSG = "\t Custom Exception Message:";
   public static final String MISSING_REQ_PARM = " is required. It cannot be blank";

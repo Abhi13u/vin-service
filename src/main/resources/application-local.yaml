@@ -1,4 +1,24 @@
 spring:
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/vin-service'
+    username: vin-service
+    password: vin-service
+    hikari:
+      schema: public
+      connection-timeout: 2000
+      maximum-pool-size: 20
+  jpa:
+    open-in-view: false
+    show-sql: true
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    hibernate:
+      ddl-auto: none
   application:
     name: vin_service
   servlet:
